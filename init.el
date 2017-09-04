@@ -37,6 +37,15 @@
     (setq evil-replace-state-cursor '("red" box))
     (setq evil-operator-state-cursor '("red" hollow))
 
+    (use-package evil-leader
+      :ensure t
+      :config
+      (global-evil-leader-mode)
+      (progn
+	(evil-leader/set-leader ",")
+	)
+      )
+
     ;; jk works with visual lines instead of real lines
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -62,7 +71,9 @@
  '(custom-safe-themes
    (quote
     ("c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" default)))
- '(package-selected-packages (quote (base16-theme color-theme helm use-package))))
+ '(package-selected-packages
+   (quote
+    (evil-leader base16-theme color-theme helm use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
